@@ -167,7 +167,7 @@ TEST(Statement, executeStep)
     const int64_t       id      = query.getColumn(0);
     const std::string   msg     = query.getColumn(1);
     const int           integer = query.getColumn(2);
-    const long          integer2= query.getColumn(2);
+    const int32_t       integer2= query.getColumn(2);
     const double        real    = query.getColumn(3);
     EXPECT_EQ(1,        id);
     EXPECT_EQ("first",  msg);
@@ -220,7 +220,7 @@ TEST(Statement, tryExecuteStep)
     const int64_t       id      = query.getColumn(0);
     const std::string   msg     = query.getColumn(1);
     const int           integer = query.getColumn(2);
-    const long          integer2= query.getColumn(2);
+    const int32_t       integer2= query.getColumn(2);
     const double        real    = query.getColumn(3);
     EXPECT_EQ(1,        id);
     EXPECT_EQ("first",  msg);
@@ -327,7 +327,7 @@ TEST(Statement, bindings)
     // Fourth row with string/int64/float
     {
         const std::string   fourth("fourth");
-        const long long     int64 = 12345678900000LL;
+        const int64_t       int64 = 12345678900000LL;
         const float         float32 = 0.234f;
         insert.bind(1, fourth);
         insert.bind(2, int64);
@@ -373,7 +373,7 @@ TEST(Statement, bindings)
     // Sixth row with uint32_t unsigned value and a long value (which is either a 32b int or a 64b long long)
     {
         const uint32_t  uint32 = 4294967295U;
-        const long      integer = -123;
+        const int32_t   integer = -123;
         insert.bind(2, uint32);
         insert.bind(3, integer);
         EXPECT_EQ(1, insert.exec());
@@ -491,8 +491,8 @@ TEST(Statement, bindByName)
     // Second row with string/int64/float
     {
         const std::string   second("second");
-        const long long     int64 = 12345678900000LL;
-        const long          integer = -123;
+        const int64_t       int64 = 12345678900000LL;
+        const int32_t       integer = -123;
         const float         float32 = 0.234f;
         insert.bind("@msg",      second);
         insert.bind("@int",      int64);
@@ -604,8 +604,8 @@ TEST(Statement, bindByNameString)
     // Second row with string/int64/float
     {
         const std::string   second("second");
-        const long long     int64 = 12345678900000LL;
-        const long          integer = -123;
+        const int64_t       int64 = 12345678900000LL;
+        const int32_t       integer = -123;
         const float         float32 = 0.234f;
         insert.bind(amsg, second);
         insert.bind(aint, int64);
