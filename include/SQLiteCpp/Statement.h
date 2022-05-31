@@ -9,6 +9,7 @@
  * or copy at http://opensource.org/licenses/MIT)
  */
 #pragma once
+#pragma GCC visibility push(default)
 
 #include <SQLiteCpp/Exception.h>
 #include <SQLiteCpp/Utils.h> // SQLITECPP_PURE_FUNC
@@ -712,3 +713,5 @@ private:
 
 
 }  // namespace SQLite
+
+#pragma GCC visibility pop

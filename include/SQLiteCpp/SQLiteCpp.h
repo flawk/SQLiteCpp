@@ -15,6 +15,7 @@
  * @brief    SQLiteC++ is a smart and simple C++ SQLite3 wrapper. This file is only "easy include" for other files.
  */
 #pragma once
+#pragma GCC visibility push(default)
 
 
 // Include useful headers of SQLiteC++
@@ -42,3 +43,5 @@
  */
 #define SQLITECPP_VERSION           "3.01.01"   // 3.1.1
 #define SQLITECPP_VERSION_NUMBER     3001001    // 3.1.1
+
+#pragma GCC visibility pop

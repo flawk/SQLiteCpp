@@ -11,6 +11,7 @@
  * or copy at http://opensource.org/licenses/MIT)
  */
 #pragma once
+#pragma GCC visibility push(default)
 
 #include <SQLiteCpp/Statement.h>
 
@@ -96,3 +97,5 @@ void bind(SQLite::Statement& query, const std::tuple<Types...> &tuple, std::inde
 #endif // c++14
 
 } // namespace SQLite
+
+#pragma GCC visibility pop

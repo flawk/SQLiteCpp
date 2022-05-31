@@ -9,6 +9,7 @@
  * or copy at http://opensource.org/licenses/MIT)
  */
 #pragma once
+#pragma GCC visibility push(default)
 
 #include <stdexcept>
 #include <string>
@@ -90,3 +91,5 @@ private:
 
 
 }  // namespace SQLite
+
+#pragma GCC visibility pop

@@ -9,6 +9,7 @@
  * or copy at http://opensource.org/licenses/MIT)
  */
 #pragma once
+#pragma GCC visibility push(default)
 
 #include <cassert>
 
@@ -44,3 +45,5 @@ namespace SQLite
 #define SQLITECPP_ASSERT(expression, message)   assert(expression && message)
 
 #endif
+
+#pragma GCC visibility pop

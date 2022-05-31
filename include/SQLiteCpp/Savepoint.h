@@ -11,6 +11,7 @@
  * copy at http://opensource.org/licenses/MIT)
  */
 #pragma once
+#pragma GCC visibility push(default)
 
 #include <SQLiteCpp/Exception.h>
 
@@ -93,3 +94,5 @@ class Savepoint {
     bool mbReleased;      ///< True when release has been called
 };
 }  // namespace SQLite
+
+#pragma GCC visibility pop

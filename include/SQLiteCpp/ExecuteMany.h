@@ -10,6 +10,7 @@
  * or copy at http://opensource.org/licenses/MIT)
  */
 #pragma once
+#pragma GCC visibility push(default)
 
 #if (__cplusplus >= 201402L) || ( defined(_MSC_VER) && (_MSC_VER >= 1900) ) // c++14: Visual Studio 2015
 
@@ -88,3 +89,5 @@ void bind_exec(Statement& apQuery, TupleT&& aTuple)
 }  // namespace SQLite
 
 #endif // c++14
+
+#pragma GCC visibility pop

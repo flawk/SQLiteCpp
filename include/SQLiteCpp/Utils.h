@@ -9,6 +9,7 @@
  * or copy at http://opensource.org/licenses/MIT)
  */
 #pragma once
+#pragma GCC visibility push(default)
 
 // macro taken from https://github.com/nemequ/hedley/blob/master/hedley.h that was in public domain at this time
 #if defined(__GNUC__) || defined(__GNUG__) || defined(__clang__) ||\
@@ -29,3 +30,5 @@
 #if !defined(SQLITECPP_PURE_FUNC)
 #define SQLITECPP_PURE_FUNC
 #endif
+
+#pragma GCC visibility pop

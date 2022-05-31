@@ -9,6 +9,7 @@
  * or copy at http://opensource.org/licenses/MIT)
  */
 #pragma once
+#pragma GCC visibility push(default)
 
 #include <SQLiteCpp/Statement.h>
 #include <SQLiteCpp/Exception.h>
@@ -289,3 +290,5 @@ T Statement::getColumns(const std::integer_sequence<int, Is...>)
 #endif
 
 }  // namespace SQLite
+
+#pragma GCC visibility pop
