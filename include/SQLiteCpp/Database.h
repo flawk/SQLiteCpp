@@ -3,7 +3,7 @@
  * @ingroup SQLiteCpp
  * @brief   Management of a SQLite Database Connection.
  *
- * Copyright (c) 2012-2021 Sebastien Rombauts (sebastien.rombauts@gmail.com)
+ * Copyright (c) 2012-2022 Sebastien Rombauts (sebastien.rombauts@gmail.com)
  *
  * Distributed under the MIT License (MIT) (See accompanying file LICENSE.txt
  * or copy at http://opensource.org/licenses/MIT)
@@ -93,8 +93,8 @@ extern const int OPEN_NOFOLLOW;     // SQLITE_OPEN_NOFOLLOW
 
 extern const int OK;                ///< SQLITE_OK (used by check() bellow)
 
-extern const char*  VERSION;        ///< SQLITE_VERSION string from the sqlite3.h used at compile time
-extern const int    VERSION_NUMBER; ///< SQLITE_VERSION_NUMBER from the sqlite3.h used at compile time
+extern const char* const VERSION;        ///< SQLITE_VERSION string from the sqlite3.h used at compile time
+extern const int         VERSION_NUMBER; ///< SQLITE_VERSION_NUMBER from the sqlite3.h used at compile time
 
 /// Return SQLite version string using runtime call to the compiled library
 const char* getLibVersion() noexcept;
@@ -343,7 +343,7 @@ public:
      *
      * @return the sqlite result code.
      */
-    int tryExec(const std::string aQueries) noexcept
+    int tryExec(const std::string& aQueries) noexcept
     {
         return tryExec(aQueries.c_str());
     }
@@ -404,7 +404,7 @@ public:
      *
      * @throw SQLite::Exception in case of error
      */
-    bool tableExists(const char* apTableName);
+    bool tableExists(const char* apTableName) const;
 
     /**
      * @brief Shortcut to test if a table exists.
@@ -417,7 +417,7 @@ public:
      *
      * @throw SQLite::Exception in case of error
      */
-    bool tableExists(const std::string& aTableName)
+    bool tableExists(const std::string& aTableName) const
     {
         return tableExists(aTableName.c_str());
     }
@@ -567,7 +567,7 @@ public:
     static Header getHeaderInfo(const std::string& aFilename);
 
     // Parse SQLite header data from a database file.
-    Header getHeaderInfo()
+    Header getHeaderInfo() const
     {
         return getHeaderInfo(mFilename);
     }
